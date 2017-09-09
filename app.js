@@ -18,14 +18,32 @@ const FOURTEENERS = [
     lon: '-105.821259'
   },
   {
+    name: 'Mt. Evans',
+    slug: 'mt_evans',
+    elevation: '14,264',
+    range: 'Front Range',
+    lat: '39.588360',
+    lon: '-105.643333'
+  },
+  {
     name: 'Quandary Peak',
     slug: 'quandary_peak',
     elevation: '14,265',
     range: 'Tenmile Range',
     lat: '39.397236',
     lon: '-106.106430'
+  },
+  {
+    name: 'Mt. Elbert',
+    slug: 'mt_elbert',
+    elevation: '14,433',
+    range: 'Sawatch Range',
+    lat: '39.118075',
+    lon: '-106.445417'
   }
 ]
+
+const MTNRANGES = []
 
 const WEATHERBITAPI = {
   key: '4bf91204a99b46e29d407607f333f61c'
@@ -150,13 +168,33 @@ function displayExtendedForecast(data) {
   $('.js-extended-forecast').html(extendedForecastHTML)
 }
 
-function showHomePage() {
-  let homePageHTML = `<ul>`
+function collectMtnRanges() {
   FOURTEENERS.forEach(mtn => {
-    homePageHTML += `<li><a href="?${mtn.slug}">${mtn.name}</a></li>`
+    if (!MTNRANGES.includes(mtn.range)) {
+      MTNRANGES.push(mtn.range)
+    }
   })
-  homePageHTML += `</ul>`
-  
+}
+
+function makeMtnList() {
+  let mtnListHTML = `<ul>`
+  MTNRANGES.forEach(range => {
+    mtnListHTML += `<li>${range}<ul>`
+    FOURTEENERS.forEach(mtn => {
+      if (mtn.range === range) {
+        mtnListHTML += `<li><a href="?${mtn.slug}">${mtn.name}</a></li>`
+      }
+    })
+    mtnListHTML += `</ul></li>`
+  })
+  mtnListHTML += `</ul>`
+
+  return mtnListHTML
+}
+
+function showHomePage() {
+  collectMtnRanges()
+  let homePageHTML = makeMtnList()
   $('.js-header-content').html(homePageHTML)
 }
 
