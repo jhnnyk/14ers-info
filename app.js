@@ -34,6 +34,14 @@ const FOURTEENERS = [
     lon: '-106.106430'
   },
   {
+    name: 'Mt. Lincoln',
+    slug: 'mt_lincoln',
+    elevation: '14,286',
+    range: 'Mosquito Range',
+    lat: '39.351391',
+    lon: '-106.111404'
+  },
+  {
     name: 'Mt. Elbert',
     slug: 'mt_elbert',
     elevation: '14,433',
@@ -64,6 +72,38 @@ const FOURTEENERS = [
     range: 'Front Range',
     lat: '39.582638',
     lon: '-105.668610'
+  },
+  {
+    name: 'Mt. Cameron',
+    slug: 'mt_cameron',
+    elevation: '14,238',
+    range: 'Mosquito Range',
+    lat: '39.346844',
+    lon: '-106.118576'
+  },
+  {
+    name: 'Mt. Bross',
+    slug: 'mt_bross',
+    elevation: '14,172',
+    range: 'Mosquito Range',
+    lat: '39.335060',
+    lon: '-106.107376'
+  },
+  {
+    name: 'Mt. Democrat',
+    slug: 'mt_democrat',
+    elevation: '14,148',
+    range: 'Mosquito Range',
+    lat: '39.339542',
+    lon: '-106.139946'
+  }, 
+  {
+    name: 'Mt. Sherman',
+    slug: 'mt_sherman',
+    elevation: '14,036',
+    range: 'Mosquito Range',
+    lat: '39.225006',
+    lon: '-106.169945'
   }
 ]
 
