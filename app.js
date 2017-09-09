@@ -136,7 +136,7 @@ function displayMountainPageHeader(mountain) {
     </p>
   `)
 
-  $('h1').before('<a href="?">&larr; back to Home</a>')
+  $('h1').before('<a href="index.html">&larr; back to Home</a>')
 }
 
 function displayCurrentWeather(data) {
