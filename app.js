@@ -103,9 +103,10 @@ function displayWeatherForecast(data) {
     date.setUTCHours(hourly.datetime.split(':')[1])
     forecastHTML += `
       <div class="hourly-weather">
-        ${moment(date).format("ddd ha")}
+        ${moment(date).format("ddd ha")}<br>
         <img src="images/icons/${hourly.weather.icon}.png" alt="${hourly.weather.description}"><br>
-        ${hourly.weather.description}
+        ${hourly.temp}ºF ${hourly.weather.description}<br>
+        Wind: ${hourly.wind_cdir} @ ${hourly.wind_spd}mph
       </div>`
   })
 
