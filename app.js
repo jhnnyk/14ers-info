@@ -50,7 +50,8 @@ function selectPage(slug) {
 function showMountainPage(mountain) {
   displayMountainPageHeader(mountain)
   getCurrentWeatherFromAPI(mountain)
-  getWeatherForecastFromAPI(mountain)
+  getDetailedForecastFromAPI(mountain)
+  getExtendedForecastFromAPI(mountain)
 }
 
 function getCurrentWeatherFromAPI(mountain) {
@@ -64,7 +65,7 @@ function getCurrentWeatherFromAPI(mountain) {
   $.getJSON('https://api.weatherbit.io/v2.0/current', weatherParams, displayCurrentWeather)
 }
 
-function getWeatherForecastFromAPI(mountain) {
+function getDetailedForecastFromAPI(mountain) {
   const weatherParams = {
     key: WEATHERBITAPI.key,
     units: 'I',
@@ -72,7 +73,18 @@ function getWeatherForecastFromAPI(mountain) {
     lon: mountain.lon
   }
 
-  $.getJSON('https://api.weatherbit.io/v2.0/forecast/3hourly', weatherParams, displayWeatherForecast)
+  $.getJSON('https://api.weatherbit.io/v2.0/forecast/3hourly', weatherParams, displayDetailedForecast)
+}
+
+function getExtendedForecastFromAPI(mountain) {
+  const weatherParams = {
+    key: WEATHERBITAPI.key,
+    units: 'I',
+    lat: mountain.lat,
+    lon: mountain.lon
+  }
+
+  $.getJSON('https://api.weatherbit.io/v2.0/forecast/daily', weatherParams, displayExtendedForecast)  
 }
 
 function displayMountainPageHeader(mountain) {
@@ -95,14 +107,13 @@ function displayCurrentWeather(data) {
   `)
 }
 
-function displayWeatherForecast(data) {
-  console.log(data)
-  let forecastHTML = '<h3>Weather Forecast</h3>'
+function displayDetailedForecast(data) {
+  let detailedForecastHTML = '<h3>Detailed Forecast</h3>'
   data.data.forEach(hourly => {
     let date = new Date(hourly.datetime.split(':')[0])
     date.setUTCHours(hourly.datetime.split(':')[1])
-    forecastHTML += `
-      <div class="hourly-weather">
+    detailedForecastHTML += `
+      <div class="weather-box">
         ${moment(date).format("ddd ha")}<br>
         <img src="images/icons/${hourly.weather.icon}.png" alt="${hourly.weather.description}"><br>
         ${hourly.temp}ºF ${hourly.weather.description}<br>
@@ -110,7 +121,26 @@ function displayWeatherForecast(data) {
       </div>`
   })
 
-  $('.js-weather-forecast').html(forecastHTML)
+  $('.js-detailed-forecast').html(detailedForecastHTML)
+}
+
+function displayExtendedForecast(data) {
+  console.log(data)
+  let extendedForecastHTML = '<h3>Extended Forecast</h3>'
+  data.data.forEach(day => {
+    let date = new Date(day.datetime)
+    extendedForecastHTML += `
+      <div class="weather-box">
+        ${moment(date).format("dddd")}<br>
+        ${moment(date).format("MMM D")}<br>
+        <img src="images/icons/${day.weather.icon}.png" alt="${day.weather.description}"><br>
+        ${day.weather.description}<br>
+        Hi: ${day.max_temp}ºF<br>
+        Low: ${day.min_temp}ºF
+      </div>`
+  })
+
+  $('.js-extended-forecast').html(extendedForecastHTML)
 }
 
 function showHomePage() {

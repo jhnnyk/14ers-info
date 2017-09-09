@@ -29,7 +29,7 @@ h3 {
   margin: 20px auto;
 }
 
-.hourly-weather {
+.weather-box {
   display: inline-block;
   text-align: center;
   font-size: 0.7em;
@@ -39,7 +39,7 @@ h3 {
   margin: 10px 5px;
 }
 
-.hourly-weather img {
+.weather-box img {
   width: 50px;
 }
 
