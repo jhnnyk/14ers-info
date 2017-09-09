@@ -54,7 +54,6 @@ const FLICKRAPI = {
   secret: '2ef006fc397c6b82'
 }
 
-
 let URLparam = ''
 
 function getURLParameter () {
@@ -78,6 +77,7 @@ function showMountainPage(mountain) {
   getCurrentWeatherFromAPI(mountain)
   getDetailedForecastFromAPI(mountain)
   getExtendedForecastFromAPI(mountain)
+  getPhotosFromAPI(mountain)
 }
 
 function getCurrentWeatherFromAPI(mountain) {
@@ -111,6 +111,20 @@ function getExtendedForecastFromAPI(mountain) {
   }
 
   $.getJSON('https://api.weatherbit.io/v2.0/forecast/daily', weatherParams, displayExtendedForecast)  
+}
+
+function getPhotosFromAPI(mountain) {
+  const photoParams = {
+    method: 'flickr.photos.search',
+    api_key: FLICKRAPI.key,
+    text: mountain.name,
+    format: 'json',
+    nojsoncallback: '1',
+    sort: 'relevance',
+    per_page: '20'
+  }
+
+  $.getJSON('https://api.flickr.com/services/rest/', photoParams, displayPhotos)
 }
 
 function displayMountainPageHeader(mountain) {
@@ -166,6 +180,17 @@ function displayExtendedForecast(data) {
   })
 
   $('.js-extended-forecast').html(extendedForecastHTML)
+}
+
+function displayPhotos(data) {
+  console.log(data.photos)
+  let photosHTML = `<h3>Photos</h3>`
+
+  data.photos.photo.forEach(photo => {
+    photosHTML += `<a href="https://www.flickr.com/photos/${photo.owner}/${photo.id}"><img src="https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_q.jpg" alt="${photo.title}"></a>`
+  })
+
+  $('.js-photos').html(photosHTML)
 }
 
 function collectMtnRanges() {
