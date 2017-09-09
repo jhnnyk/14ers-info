@@ -4,7 +4,7 @@ const FOURTEENERS = [
   {
     name: 'Grays Peak',
     slug: 'grays_peak',
-    elevation: '14270',
+    elevation: '14,270',
     range: 'Front Range',
     lat: '39.633820',
     lon: '-105.817520'
@@ -12,10 +12,18 @@ const FOURTEENERS = [
   {
     name: 'Torreys Peak',
     slug: 'torreys_peak',
-    elevation: '14267',
+    elevation: '14,267',
     range: 'Front Range',
     lat: '39.642742',
     lon: '-105.821259'
+  },
+  {
+    name: 'Quandary Peak',
+    slug: 'quandary_peak',
+    elevation: '14,265',
+    range: 'Tenmile Range',
+    lat: '39.397236',
+    lon: '-106.106430'
   }
 ]
 
@@ -125,7 +133,6 @@ function displayDetailedForecast(data) {
 }
 
 function displayExtendedForecast(data) {
-  console.log(data)
   let extendedForecastHTML = '<h3>Extended Forecast</h3>'
   data.data.forEach(day => {
     let date = new Date(day.datetime)
@@ -144,9 +151,13 @@ function displayExtendedForecast(data) {
 }
 
 function showHomePage() {
-  $('.js-content').html(`
-    <h2>Home page</h2>
-  `)
+  let homePageHTML = `<ul>`
+  FOURTEENERS.forEach(mtn => {
+    homePageHTML += `<li><a href="?${mtn.slug}">${mtn.name}</a></li>`
+  })
+  homePageHTML += `</ul>`
+  
+  $('.js-header-content').html(homePageHTML)
 }
 
 function run14ers() {
