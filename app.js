@@ -99,8 +99,11 @@ function displayWeatherForecast(data) {
   console.log(data)
   let forecastHTML = '<h3>Weather Forecast</h3>'
   data.data.forEach(hourly => {
+    let date = new Date(hourly.datetime.split(':')[0])
+    date.setUTCHours(hourly.datetime.split(':')[1])
     forecastHTML += `
       <div class="hourly-weather">
+        ${moment(date).format("ddd ha")}
         <img src="images/icons/${hourly.weather.icon}.png" alt="${hourly.weather.description}"><br>
         ${hourly.weather.description}
       </div>`
