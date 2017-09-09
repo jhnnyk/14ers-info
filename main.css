@@ -29,3 +29,8 @@ h3 {
   margin: 20px auto;
 }
 
+.hourly-weather {
+  display: inline-block;
+  text-align: center;
+}
+

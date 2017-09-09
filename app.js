@@ -50,6 +50,7 @@ function selectPage(slug) {
 function showMountainPage(mountain) {
   displayMountainPageHeader(mountain)
   getCurrentWeatherFromAPI(mountain)
+  getWeatherForecastFromAPI(mountain)
 }
 
 function getCurrentWeatherFromAPI(mountain) {
@@ -63,15 +64,15 @@ function getCurrentWeatherFromAPI(mountain) {
   $.getJSON('https://api.weatherbit.io/v2.0/current', weatherParams, displayCurrentWeather)
 }
 
-function displayCurrentWeather(data) {
-  console.log(data)
-  const currentWeather = data.data[0]
-  $('.js-current-weather').html(`
-    <h3>Current Weather</h3>
-    <img src="images/icons/${currentWeather.weather.icon}.png" alt="${currentWeather.weather.description}"><br>
-    ${currentWeather.weather.description}<br>
-    Temp: ${currentWeather.temp} (feels like ${currentWeather.app_temp})
-  `)
+function getWeatherForecastFromAPI(mountain) {
+  const weatherParams = {
+    key: WEATHERBITAPI.key,
+    units: 'I',
+    lat: mountain.lat,
+    lon: mountain.lon
+  }
+
+  $.getJSON('https://api.weatherbit.io/v2.0/forecast/3hourly', weatherParams, displayWeatherForecast)
 }
 
 function displayMountainPageHeader(mountain) {
@@ -82,6 +83,30 @@ function displayMountainPageHeader(mountain) {
       Elevation: ${mountain.elevation} ft.
     </p>
   `)
+}
+
+function displayCurrentWeather(data) {
+  const currentWeather = data.data[0]
+  $('.js-current-weather').html(`
+    <h3>Current Weather</h3>
+    <img src="images/icons/${currentWeather.weather.icon}.png" alt="${currentWeather.weather.description}"><br>
+    ${currentWeather.weather.description}<br>
+    Temp: ${currentWeather.temp} (feels like ${currentWeather.app_temp})
+  `)
+}
+
+function displayWeatherForecast(data) {
+  console.log(data)
+  let forecastHTML = '<h3>Weather Forecast</h3>'
+  data.data.forEach(hourly => {
+    forecastHTML += `
+      <div class="hourly-weather">
+        <img src="images/icons/${hourly.weather.icon}.png" alt="${hourly.weather.description}"><br>
+        ${hourly.weather.description}
+      </div>`
+  })
+
+  $('.js-weather-forecast').html(forecastHTML)
 }
 
 function showHomePage() {
