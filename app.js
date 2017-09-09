@@ -135,6 +135,8 @@ function displayMountainPageHeader(mountain) {
       Elevation: ${mountain.elevation} ft.
     </p>
   `)
+
+  $('h1').before('<a href="?">&larr; back to Home</a>')
 }
 
 function displayCurrentWeather(data) {
