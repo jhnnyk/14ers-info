@@ -67,6 +67,9 @@ function displayCurrentWeather(data) {
   console.log(data)
   const currentWeather = data.data[0]
   $('.js-current-weather').html(`
+    <h3>Current Weather</h3>
+    <img src="images/icons/${currentWeather.weather.icon}.png" alt="${currentWeather.weather.description}"><br>
+    ${currentWeather.weather.description}<br>
     Temp: ${currentWeather.temp} (feels like ${currentWeather.app_temp})
   `)
 }
