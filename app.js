@@ -19,6 +19,16 @@ const FOURTEENERS = [
   }
 ]
 
+const WEATHERBITAPI = {
+  key: '4bf91204a99b46e29d407607f333f61c'
+}
+
+const FLICKRAPI = {
+  key: '3ea173e4864e55e1235e2d14e1d1c738',
+  secret: '2ef006fc397c6b82'
+}
+
+
 let URLparam = ''
 
 function getURLParameter () {
@@ -38,7 +48,31 @@ function selectPage(slug) {
 }
 
 function showMountainPage(mountain) {
-  $('.js-content').html(`
+  displayMountainPageHeader(mountain)
+  getCurrentWeatherFromAPI(mountain)
+}
+
+function getCurrentWeatherFromAPI(mountain) {
+  const weatherParams = {
+    key: WEATHERBITAPI.key,
+    units: 'I',
+    lat: mountain.lat,
+    lon: mountain.lon
+  }
+
+  $.getJSON('https://api.weatherbit.io/v2.0/current', weatherParams, displayCurrentWeather)
+}
+
+function displayCurrentWeather(data) {
+  console.log(data)
+  const currentWeather = data.data[0]
+  $('.js-current-weather').html(`
+    Temp: ${currentWeather.temp} (feels like ${currentWeather.app_temp})
+  `)
+}
+
+function displayMountainPageHeader(mountain) {
+  $('.js-header-content').html(`
     <h2>${mountain.name}</h2>
     <p>
       ${mountain.range}<br>
