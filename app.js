@@ -40,6 +40,30 @@ const FOURTEENERS = [
     range: 'Sawatch Range',
     lat: '39.118075',
     lon: '-106.445417'
+  },
+  {
+    name: 'Longs Peak',
+    slug: 'longs_peak',
+    elevation: '14,255',
+    range: 'Front Range',
+    lat: '40.254902',
+    lon: '-105.615738'
+  },
+  {
+    name: 'Pikes Peak',
+    slug: 'pikes_peak',
+    elevation: '14,110',
+    range: 'Front Range',
+    lat: '38.840542',
+    lon: '-105.044357'
+  },
+  {
+    name: 'Mt. Bierstadt',
+    slug: 'mt_bierstadt',
+    elevation: '14,060',
+    range: 'Front Range',
+    lat: '39.582638',
+    lon: '-105.668610'
   }
 ]
 
