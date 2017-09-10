@@ -10,16 +10,21 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <header>
+  <header role="banner">
     <h1><a href="index.html">14ers.info</a></h1>
   </header>
-  <div class="container">
-    <div class="js-header-content"></div>
-    <div class="js-current-weather"></div>
-    <div class="js-extended-forecast"></div>
-    <div class="js-detailed-forecast"></div>
-    <div class="js-photos"></div>
-  </div>
+
+  <main role="main">
+    <div class="container">
+      <div class="js-header-content"></div>
+      <div class="js-current-weather"></div>
+      <div class="js-extended-forecast"></div>
+      <div class="js-detailed-forecast"></div>
+      <div class="js-photos"></div>
+    </div>
+  </main>
+
+  <nav class="container" role="navigation"></nav>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
