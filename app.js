@@ -104,6 +104,118 @@ const FOURTEENERS = [
     range: 'Mosquito Range',
     lat: '39.225006',
     lon: '-106.169945'
+  },
+  {
+    name: 'Mt. Massive',
+    slug: 'mt_massive',
+    elevation: '14,421',
+    range: 'Sawatch Range',
+    lat: '39.187298',
+    lon: '-106.475548'
+  },
+  {
+    name: 'Mt. Harvard',
+    slug: 'mt_harvard',
+    elevation: '14,420',
+    range: 'Sawatch Range',
+    lat: '38.924328',
+    lon: '-106.320618'
+  },
+  {
+    name: 'Mt. Columbia',
+    slug: 'mt_columbia',
+    elevation: '14,073',
+    range: 'Sawatch Range',
+    lat: '38.903957',
+    lon: '-106.297485'
+  },
+  {
+    name: 'La Plata Peak',
+    slug: 'la_plata_peak',
+    elevation: '14,336',
+    range: 'Sawatch Range',
+    lat: '39.029251',
+    lon: '-106.473145'
+  },
+  {
+    name: 'Mt. Antero',
+    slug: 'mt_antero',
+    elevation: '14,269',
+    range: 'Sawatch Range',
+    lat: '38.674088',
+    lon: '-106.246201'
+  },
+  {
+    name: 'Mt. Shavano',
+    slug: 'mt_shavano',
+    elevation: '14,229',
+    range: 'Sawatch Range',
+    lat: '38.619083',
+    lon: '-106.239296'
+  },
+  {
+    name: 'Tabeguache Peak',
+    slug: 'tabeguache_peak',
+    elevation: '14,155',
+    range: 'Sawatch Range',
+    lat: '38.625622',
+    lon: '-106.250710'
+  },
+  {
+    name: 'Mt. Belford',
+    slug: 'mt_belford',
+    elevation: '14,197',
+    range: 'Sawatch Range',
+    lat: '38.960575',
+    lon: '-106.360832'
+  },
+  {
+    name: 'Mt. Oxford',
+    slug: 'mt_oxford',
+    elevation: '14,153',
+    range: 'Sawatch Range',
+    lat: '38.964680',
+    lon: '-106.338432'
+  },
+  {
+    name: 'Mt. Princeton',
+    slug: 'mt_princeton',
+    elevation: '14,197',
+    range: 'Sawatch Range',
+    lat: '38.749062',
+    lon: '-106.242432'
+  },
+  {
+    name: 'Mt. Yale',
+    slug: 'mt_yale',
+    elevation: '14,196',
+    range: 'Sawatch Range',
+    lat: '38.844051',
+    lon: '-106.313965'
+  },
+  {
+    name: 'Missouri Mountain',
+    slug: 'missouri_mountain',
+    elevation: '14,067',
+    range: 'Sawatch Range',
+    lat: '38.947559',
+    lon: '-106.378471'
+  },
+  {
+    name: 'Mt. of the Holy Cross',
+    slug: 'mt_holy_cross',
+    elevation: '14,005',
+    range: 'Sawatch Range',
+    lat: '39.466713',
+    lon: '-106.481766'
+  },
+  {
+    name: 'Huron Peak',
+    slug: 'huron_peak',
+    elevation: '14,003',
+    range: 'Sawatch Range',
+    lat: '38.945423',
+    lon: '-106.438126'
   }
 ]
 
@@ -249,7 +361,6 @@ function displayExtendedForecast(data) {
 }
 
 function displayPhotos(data) {
-  console.log(data.photos)
   let photosHTML = `<h3>Photos</h3>`
 
   data.photos.photo.forEach(photo => {
