@@ -216,6 +216,62 @@ const FOURTEENERS = [
     range: 'Sawatch Range',
     lat: '38.945423',
     lon: '-106.438126'
+  },
+  {
+    name: 'Castle Peak',
+    slug: 'castle_peak',
+    elevation: '14,265',
+    range: 'Elk Mountains',
+    lat: '39.009647',
+    lon: '-106.86144'
+  },
+  {
+    name: 'Conundrum Peak',
+    slug: 'conundrum_peak',
+    elevation: '14,060',
+    range: 'Elk Mountains',
+    lat: '39.01563',
+    lon: '-106.86294'
+  },
+  {
+    name: 'Maroon Peak',
+    slug: 'maroon_peak',
+    elevation: '14,156',
+    range: 'Elk Mountains',
+    lat: '39.070713',
+    lon: '-106.989113'
+  },
+  {
+    name: 'North Maroon Peak',
+    slug: 'north_maroon_peak',
+    elevation: '14,014',
+    range: 'Elk Mountains',
+    lat: '39.076077',
+    lon: '-106.987267'
+  },
+  {
+    name: 'Capitol Peak',
+    slug: 'capitol_peak',
+    elevation: '14,130',
+    range: 'Elk Mountains',
+    lat: '39.150166',
+    lon: '-107.083221'
+  },
+  {
+    name: 'Snowmass Mountain',
+    slug: 'snowmass_mountain',
+    elevation: '14,092',
+    range: 'Elk Mountains',
+    lat: '39.118809',
+    lon: '-107.066528'
+  },
+  {
+    name: 'Pyramid Peak',
+    slug: 'pyramid_peak',
+    elevation: '14,018',
+    range: 'Elk Mountains',
+    lat: '39.071545',
+    lon: '-106.950188'
   }
 ]
 
