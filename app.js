@@ -272,6 +272,118 @@ const FOURTEENERS = [
     range: 'Elk Mountains',
     lat: '39.071545',
     lon: '-106.950188'
+  },
+  {
+    name: 'Uncompahgre Peak',
+    slug: 'uncompahgre_peak',
+    elevation: '14,309',
+    range: 'San Juan Mountains',
+    lat: '38.071507',
+    lon: '-107.462166'
+  },
+  {
+    name: 'Mt. Wilson',
+    slug: 'mt_wilson',
+    elevation: '14,246',
+    range: 'San Juan Mountains',
+    lat: '37.839310',
+    lon: '-107.991570'
+  },
+  {
+    name: 'El Diente Peak',
+    slug: 'el_diente_peak',
+    elevation: '14,159',
+    range: 'San Juan Mountains',
+    lat: '37.839275',
+    lon: '-108.005219'
+  },
+  {
+    name: 'Wilson Peak',
+    slug: 'wilson_peak',
+    elevation: '14,017',
+    range: 'San Juan Mountains',
+    lat: '37.859913',
+    lon: '-107.984795'
+  },
+  {
+    name: 'Mt. Sneffels',
+    slug: 'mt_sneffels',
+    elevation: '14,150',
+    range: 'San Juan Mountains',
+    lat: '38.003605',
+    lon: '-107.792229'
+  },
+  {
+    name: 'Mt. Eolus',
+    slug: 'mt_eolus',
+    elevation: '14,083',
+    range: 'San Juan Mountains',
+    lat: '37.621948',
+    lon: '-107.622498'
+  },
+  {
+    name: 'Windom Peak',
+    slug: 'windom_peak',
+    elevation: '14,082',
+    range: 'San Juan Mountains',
+    lat: '37.621235',
+    lon: '-107.591774'
+  },
+  {
+    name: 'Sunlight Peak',
+    slug: 'sunlight_peak',
+    elevation: '14,059',
+    range: 'San Juan Mountains',
+    lat: '37.627285',
+    lon: '-107.595894'
+  },
+  {
+    name: 'North Eolus',
+    slug: 'north_eolus',
+    elevation: '14,039',
+    range: 'San Juan Mountains',
+    lat: '37.625416',
+    lon: '-107.620995'
+  },
+  {
+    name: 'Handies Peak',
+    slug: 'handies_peak',
+    elevation: '14,048',
+    range: 'San Juan Mountains',
+    lat: '37.913021',
+    lon: '-107.504478'
+  },
+  {
+    name: 'Redcloud Peak',
+    slug: 'redcloud_peak',
+    elevation: '14,034',
+    range: 'San Juan Mountains',
+    lat: '37.940880',
+    lon: '-107.421654'
+  },
+  {
+    name: 'Sunshine Peak',
+    slug: 'sunshine_peak',
+    elevation: '14,001',
+    range: 'San Juan Mountains',
+    lat: '37.922604',
+    lon: '-107.425606'
+  },
+  {
+    name: 'Wetterhorn Peak',
+    slug: 'wetterhorn_peak',
+    elevation: '14,015',
+    range: 'San Juan Mountains',
+    lat: '38.060593',
+    lon: '-107.510834'
+  },
+  {
+    name: 'San Luis Peak',
+    slug: 'san_luis_peak',
+    elevation: '14,014',
+    range: 'San Juan Mountains',
+    lat: '37.986897',
+    lon: '-106.931389'
   }
 ]
 
