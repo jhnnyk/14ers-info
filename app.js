@@ -614,7 +614,7 @@ function displayExtendedForecast(data) {
 }
 
 function displayPhotos(data) {
-  let photosHTML = `<h3>Photos</h3>`
+  let photosHTML = ``
 
   data.photos.photo.forEach(photo => {
     photosHTML += `<a href="https://www.flickr.com/photos/${photo.owner}/${photo.id}"><img src="https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_q.jpg" alt="${photo.title}"></a>`

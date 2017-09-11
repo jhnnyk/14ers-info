@@ -140,3 +140,9 @@ nav li ul li {
   width: 50px;
 }
 
+.photos {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
