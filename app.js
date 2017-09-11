@@ -412,7 +412,7 @@ function selectPage(slug) {
   if (mountain) {
     showMountainPage(mountain)
   } else {
-    showHomePage()
+    setNav()
   }
 }
 
@@ -549,7 +549,7 @@ function collectMtnRanges() {
 function makeMtnList() {
   let mtnListHTML = `<ul>`
   MTNRANGES.forEach(range => {
-    mtnListHTML += `<li>${range}<ul>`
+    mtnListHTML += `<li><h4>${range}</h4><ul>`
     FOURTEENERS.forEach(mtn => {
       if (mtn.range === range) {
         mtnListHTML += `<li><a href="?${mtn.slug}">${mtn.name}</a></li>`
@@ -562,10 +562,10 @@ function makeMtnList() {
   return mtnListHTML
 }
 
-function showHomePage() {
+function setNav() {
   collectMtnRanges()
-  let homePageHTML = makeMtnList()
-  $('.js-header-content').html(homePageHTML)
+  let navHTML = makeMtnList()
+  $('nav').html(navHTML)
 }
 
 function run14ers() {
