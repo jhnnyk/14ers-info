@@ -52,6 +52,7 @@ header {
 
 header a {
   color: white;
+  text-shadow: 1px 1px 5px #808081;
 }
 
 header a:hover {
