@@ -5,6 +5,8 @@
 body {
   font-family: 'Open Sans', Sans-Serif;
   font-size: 16px;
+  color: #002f2f;
+  background-color: #fcfcfc;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,6 +27,17 @@ h3 {
   font-size: 2em;
 }
 
+a {
+  color: #00a3a3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #006b6b;
+  text-decoration: underline;
+}
+
 header {
   text-align: center;
   background-image: url("images/IMG_5865.jpg");
@@ -35,6 +48,9 @@ header {
 
 header a {
   color: white;
+}
+
+header a:hover {
   text-decoration: none;
 }
 
