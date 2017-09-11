@@ -121,6 +121,8 @@ nav li ul li {
 
 .weather-container {
   display: none;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .weather-box {
