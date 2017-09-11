@@ -27,6 +27,10 @@ h3 {
   font-size: 2em;
 }
 
+p {
+  line-height: 1.4em;
+}
+
 a {
   color: #00a3a3;
   text-decoration: none;
@@ -74,14 +78,23 @@ nav li ul li {
   padding: 0 30px;
 }
 
-.current-weather {
-  line-height: 1.4em;
+.mtn-header h2 {
+  margin-bottom: 5px;
+}
+
+.mtn-header p {
+  margin: 0;
+}
+
+.current-weather h3 {
+  margin-bottom: 10px;
 }
 
 .current-weather img {
   position: relative;
   float: left;
   top: -15px;
+  margin-right: 10px;
 }
 
 .forecast-box {
