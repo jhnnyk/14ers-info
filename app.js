@@ -384,6 +384,86 @@ const FOURTEENERS = [
     range: 'San Juan Mountains',
     lat: '37.986897',
     lon: '-106.931389'
+  },
+  {
+    name: 'Blanca Peak',
+    slug: 'blanca_peak',
+    elevation: '14,345',
+    range: 'Sangre de Cristo Range',
+    lat: '37.577473',
+    lon: '-105.485443'
+  },
+  {
+    name: 'Ellingwood Point',
+    slug: 'ellingwood_point',
+    elevation: '14,042',
+    range: 'Sangre de Cristo Range',
+    lat: '37.582508',
+    lon: '-105.492569'
+  },
+  {
+    name: 'Little Bear Peak',
+    slug: 'little_bear_peak',
+    elevation: '14,037',
+    range: 'Sangre de Cristo Range',
+    lat: '37.566624',
+    lon: '-105.497162'
+  },
+  {
+    name: 'Crestone Peak',
+    slug: 'crestone_peak',
+    elevation: '14,294',
+    range: 'Sangre de Cristo Range',
+    lat: '37.966972',
+    lon: '-105.585304'
+  },
+  {
+    name: 'Crestone Needle',
+    slug: 'crestone_needle',
+    elevation: '14,197',
+    range: 'Sangre de Cristo Range',
+    lat: '37.964737',
+    lon: '-105.576683'
+  },
+  {
+    name: 'Kit Carson Peak',
+    slug: 'kit_carson_peak',
+    elevation: '14,165',
+    range: 'Sangre de Cristo Range',
+    lat: '37.979759',
+    lon: '-105.602562'
+  },
+  {
+    name: 'Challenger Point',
+    slug: 'challenger_point',
+    elevation: '14,081',
+    range: 'Sangre de Cristo Range',
+    lat: '37.980267',
+    lon: '-105.606766'
+  },
+  {
+    name: 'Humboldt Peak',
+    slug: 'humboldt_peak',
+    elevation: '14,064',
+    range: 'Sangre de Cristo Range',
+    lat: '37.976105',
+    lon: '-105.555351'
+  },
+  {
+    name: 'Culebra Peak',
+    slug: 'culebra_peak',
+    elevation: '14,047',
+    range: 'Sangre de Cristo Range',
+    lat: '37.122173',
+    lon: '-105.185593'
+  },
+  {
+    name: 'Mt. Lindsey',
+    slug: 'mt_lindsey',
+    elevation: '14,042',
+    range: 'Sangre de Cristo Range',
+    lat: '37.583801',
+    lon: '-105.444763'
   }
 ]
 
