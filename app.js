@@ -564,12 +564,16 @@ function displayMountainPageHeader(mountain) {
 }
 
 function displayCurrentWeather(data) {
+  console.log(data.data[0])
   const currentWeather = data.data[0]
   $('.js-current-weather').html(`
     <h3>Current Weather</h3>
-    <img src="images/icons/${currentWeather.weather.icon}.png" alt="${currentWeather.weather.description}"><br>
-    ${currentWeather.weather.description}<br>
-    Temp: ${currentWeather.temp} (feels like ${currentWeather.app_temp})
+    <img src="images/icons/${currentWeather.weather.icon}.png" alt="${currentWeather.weather.description}">
+    <p>
+      ${currentWeather.weather.description}<br>
+      Temp: ${currentWeather.temp}ºF (feels like ${currentWeather.app_temp}ºF)<br>
+      Wind: ${currentWeather.wind_cdir} at ${currentWeather.wind_spd}mph
+    </p>
   `)
 }
 

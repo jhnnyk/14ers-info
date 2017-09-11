@@ -25,6 +25,7 @@ h2 {
 
 h3 {
   font-size: 2em;
+  clear: both;
 }
 
 a {
@@ -71,6 +72,16 @@ nav li ul li {
 .container {
   max-width: 800px;
   margin: 20px auto;
+}
+
+.current-weather {
+  line-height: 1.4em;
+}
+
+.current-weather img {
+  position: relative;
+  float: left;
+  top: -15px;
 }
 
 .weather-box {
