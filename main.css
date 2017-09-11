@@ -38,6 +38,20 @@ header a {
   text-decoration: none;
 }
 
+nav h4 {
+  text-transform: uppercase;
+  margin: 20px 0 0 0;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav li ul li {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
 .container {
   max-width: 800px;
   margin: 20px auto;
