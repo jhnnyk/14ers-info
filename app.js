@@ -564,7 +564,6 @@ function displayMountainPageHeader(mountain) {
 }
 
 function displayCurrentWeather(data) {
-  console.log(data.data[0])
   const currentWeather = data.data[0]
   $('.js-current-weather').html(`
     <h3>Current Weather</h3>
@@ -578,7 +577,7 @@ function displayCurrentWeather(data) {
 }
 
 function displayDetailedForecast(data) {
-  let detailedForecastHTML = '<h3>Detailed Forecast</h3>'
+  let detailedForecastHTML = '<div class="weather-container">'
   data.data.forEach(hourly => {
     let date = new Date(hourly.datetime.split(':')[0])
     date.setUTCHours(hourly.datetime.split(':')[1])
@@ -590,12 +589,13 @@ function displayDetailedForecast(data) {
         Wind: ${hourly.wind_cdir} @ ${hourly.wind_spd}mph
       </div>`
   })
+  detailedForecastHTML += '</div>'
 
-  $('.js-detailed-forecast').html(detailedForecastHTML)
+  $('.js-detailed-forecast').append(detailedForecastHTML).show()
 }
 
 function displayExtendedForecast(data) {
-  let extendedForecastHTML = '<h3>Extended Forecast</h3>'
+  let extendedForecastHTML = '<div class="weather-container">'
   data.data.forEach(day => {
     let date = new Date(day.datetime)
     extendedForecastHTML += `
@@ -608,8 +608,9 @@ function displayExtendedForecast(data) {
         Low: ${day.min_temp}ºF
       </div>`
   })
+  extendedForecastHTML += '</div>'
 
-  $('.js-extended-forecast').html(extendedForecastHTML)
+  $('.js-extended-forecast').append(extendedForecastHTML).show()
 }
 
 function displayPhotos(data) {
@@ -656,5 +657,23 @@ function run14ers() {
   getURLParameter()
   selectPage(URLparam)
 }
+
+$('.js-extended-forecast button').click(function() {
+  if ($(this).text() === 'show') {
+    $(this).text('hide')
+  } else {
+    $(this).text('show')
+  }
+  $('.js-extended-forecast .weather-container').slideToggle()
+})
+
+$('.js-detailed-forecast button').click(function() {
+  if ($(this).text() === 'show') {
+    $(this).text('hide')
+  } else {
+    $(this).text('show')
+  }
+  $('.js-detailed-forecast .weather-container').slideToggle()
+})
 
 $(run14ers)

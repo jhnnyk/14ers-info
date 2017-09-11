@@ -84,6 +84,7 @@ nav li ul li {
 }
 
 .forecast-box {
+  display: none;
   border-top: 3px solid #26c0c0;
   margin-top: 20px;
   clear: both;
@@ -91,6 +92,10 @@ nav li ul li {
 
 .forecast-box h3 {
   margin-top: 10px;
+}
+
+.weather-container {
+  display: none;
 }
 
 .weather-box {
