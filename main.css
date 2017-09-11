@@ -25,7 +25,6 @@ h2 {
 
 h3 {
   font-size: 2em;
-  clear: both;
 }
 
 a {
@@ -82,6 +81,16 @@ nav li ul li {
   position: relative;
   float: left;
   top: -15px;
+}
+
+.forecast-box {
+  border-top: 3px solid #26c0c0;
+  margin-top: 20px;
+  clear: both;
+}
+
+.forecast-box h3 {
+  margin-top: 10px;
 }
 
 .weather-box {
