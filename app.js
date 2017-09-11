@@ -664,6 +664,7 @@ $('.js-extended-forecast button').click(function() {
   } else {
     $(this).text('show')
   }
+  $(this).toggleClass('selected')
   $('.js-extended-forecast .weather-container').slideToggle()
 })
 
@@ -673,6 +674,7 @@ $('.js-detailed-forecast button').click(function() {
   } else {
     $(this).text('show')
   }
+  $(this).toggleClass('selected')
   $('.js-detailed-forecast .weather-container').slideToggle()
 })
 
