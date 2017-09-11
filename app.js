@@ -623,6 +623,7 @@ function displayPhotos(data) {
   $('.js-photos').html(photosHTML)
 }
 
+// collect list of mountain ranges to display mountains by range on the homepage
 function collectMtnRanges() {
   FOURTEENERS.forEach(mtn => {
     if (!MTNRANGES.includes(mtn.range)) {
@@ -631,6 +632,7 @@ function collectMtnRanges() {
   })
 }
 
+// create the HTML to display the list of mountains (by range) on the homepage
 function makeMtnList() {
   let mtnListHTML = `<ul>`
   MTNRANGES.forEach(range => {
@@ -658,6 +660,7 @@ function run14ers() {
   selectPage(URLparam)
 }
 
+// show-hide extended weather forecast
 $('.js-extended-forecast button').click(function() {
   if ($(this).text() === 'show') {
     $(this).text('hide')
@@ -668,6 +671,7 @@ $('.js-extended-forecast button').click(function() {
   $('.js-extended-forecast .weather-container').slideToggle()
 })
 
+// show-hide detailed weather forecast
 $('.js-detailed-forecast button').click(function() {
   if ($(this).text() === 'show') {
     $(this).text('hide')
