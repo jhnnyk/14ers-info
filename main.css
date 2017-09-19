@@ -50,7 +50,8 @@ header {
   padding: 70px;
 }
 
-header a {
+header a,
+header p {
   color: white;
   text-shadow: 1px 1px 5px #808081;
 }
@@ -159,4 +160,3 @@ nav li ul li {
   white-space: nowrap;
   padding: 20px 0;
 }
-
