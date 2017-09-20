@@ -44,7 +44,7 @@ a:hover {
 
 header {
   text-align: center;
-  background-image: url("images/IMG_5865.jpg");
+  background-image: url("images/sunrise-over-squaw.jpg");
   background-size: cover;
   background-position: center center;
   padding: 70px;
@@ -52,7 +52,7 @@ header {
 
 header a,
 header p {
-  color: white;
+  color: #fcfcfc;
   text-shadow: 1px 1px 5px #808081;
 }
 
@@ -60,17 +60,37 @@ header a:hover {
   text-decoration: none;
 }
 
+nav {
+  text-align: center;
+}
+
 nav h4 {
   text-transform: uppercase;
-  margin: 20px 0 0 0;
+  color: #fcfcfc;
+  text-shadow: 1px 1px 5px #808081;
 }
 
 nav li {
-  list-style-type: none;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 10px;
+  background-image: url("images/sunrise-over-squaw.jpg");
+  background-size: cover;
+  transition: all 0.5s;
+}
+
+nav li:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 nav li ul li {
-  display: inline-block;
+  display: none;
   padding: 5px 10px;
 }
 
