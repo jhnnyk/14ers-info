@@ -669,24 +669,14 @@ function run14ers () {
 }
 
 // show-hide extended weather forecast
-$('.js-extended-forecast button').click(function () {
-  if ($(this).text() === 'show') {
-    $(this).text('hide')
-  } else {
-    $(this).text('show')
-  }
-  $(this).toggleClass('selected')
+$('.js-extended-forecast h3').click(function () {
+  $(this).children('.arrow').toggleClass('down')
   $('.js-extended-forecast .weather-container').slideToggle()
 })
 
 // show-hide detailed weather forecast
-$('.js-detailed-forecast button').click(function () {
-  if ($(this).text() === 'show') {
-    $(this).text('hide')
-  } else {
-    $(this).text('show')
-  }
-  $(this).toggleClass('selected')
+$('.js-detailed-forecast h3').click(function () {
+  $(this).children('.arrow').toggleClass('down')
   $('.js-detailed-forecast .weather-container').slideToggle()
 })
 

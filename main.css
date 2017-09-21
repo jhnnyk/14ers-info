@@ -72,16 +72,13 @@ nav p {
 nav h3 {
   border-top: 3px solid #26c0c0;
   margin: 0;
-  padding: 15px 0;
-}
-
-nav h3 {
+  padding: 15px 5px;
   cursor: pointer;
 }
 
 .arrow {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 15px;
   width:20px;
   height:20px;
   border-top:5px solid #00a3a3;
@@ -141,37 +138,13 @@ nav li ul li {
 .forecast-box {
   display: none;
   border-top: 3px solid #26c0c0;
-  margin-top: 20px;
   clear: both;
 }
 
 .forecast-box h3 {
-  margin: 15px;
-}
-
-.forecast-box button {
-  color: #fcfcfc;
-  font-size: .5em;
-  padding: 6px 10px;
-  border: none;
-  border-radius: 15px;
-  background-color: #26c0c0;
-  box-shadow: 0px 3px 10px #808081;
-  transition: background-color 0.3s ease;
-  position: relative;
-  top: -7px;
-}
-
-.forecast-box button:hover {
+  margin: 0;
+  padding: 20px 5px;
   cursor: pointer;
-  position: relative;
-  top: -6px;
-  box-shadow: 0px 1px 10px #808081;
-  background-color: #00a3a3;
-}
-
-.forecast-box button.selected {
-  background-color: #00a3a3;
 }
 
 .weather-container {
