@@ -149,10 +149,13 @@ nav li ul li {
 
 @media all and (min-width: 575px) {
   .weather-container {
-    display: none;
     overflow: auto;
     white-space: nowrap;
-  }  
+  }
+}
+
+.weather-container {
+  display: none;
 }
 
 .weather-box {
