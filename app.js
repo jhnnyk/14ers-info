@@ -636,7 +636,7 @@ function collectMtnRanges () {
 function makeMtnList () {
   let mtnListHTML = `<ul>`
   MTNRANGES.forEach(range => {
-    mtnListHTML += `<li><h3>${range}</h3><ul>`
+    mtnListHTML += `<li><h3><div class="arrow right"></div>${range}</h3><ul>`
     FOURTEENERS.forEach(mtn => {
       if (mtn.range === range) {
         mtnListHTML += `<li><a href="?${mtn.slug}">${mtn.name}</a></li>`
@@ -684,6 +684,7 @@ $('.js-detailed-forecast button').click(function () {
 
 // show-hide peak lists
 $('nav').on('click', 'h3', function () {
+  $(this).children('.arrow').toggleClass('down')
   $(this).siblings('ul').slideToggle()
 })
 
