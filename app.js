@@ -650,13 +650,16 @@ function makeMtnList () {
 }
 
 function showHomePage () {
-  let mountain = FOURTEENERS[Math.floor(Math.random() * FOURTEENERS.length)]
+  // set text content for homepage
   collectMtnRanges()
   let navHTML = `<p>
       Please select a mountain from the list of mountain ranges below:
     </p>`
   navHTML += makeMtnList()
   $('nav').html(navHTML)
+
+  // show photos from a randomly selected 14er on the homepage
+  let mountain = FOURTEENERS[Math.floor(Math.random() * FOURTEENERS.length)]
   getPhotosFromAPI(mountain)
 }
 
