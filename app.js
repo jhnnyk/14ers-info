@@ -96,7 +96,7 @@ const FOURTEENERS = [
     range: 'Mosquito Range',
     lat: '39.339542',
     lon: '-106.139946'
-  }, 
+  },
   {
     name: 'Mt. Sherman',
     slug: 'mt_sherman',
@@ -484,19 +484,19 @@ function getURLParameter () {
   URLparam = window.location.search.substring(1)
 }
 
-function selectPage(slug) {
+function selectPage (slug) {
   let mountain = FOURTEENERS.find(mtn => {
     return mtn.slug === slug
   })
-  
+
   if (mountain) {
     showMountainPage(mountain)
   } else {
-    setNav()
+    showHomePage()
   }
 }
 
-function showMountainPage(mountain) {
+function showMountainPage (mountain) {
   displayMountainPageHeader(mountain)
   getCurrentWeatherFromAPI(mountain)
   getDetailedForecastFromAPI(mountain)
@@ -504,7 +504,7 @@ function showMountainPage(mountain) {
   getPhotosFromAPI(mountain)
 }
 
-function getCurrentWeatherFromAPI(mountain) {
+function getCurrentWeatherFromAPI (mountain) {
   const weatherParams = {
     key: WEATHERBITAPI.key,
     units: 'I',
@@ -515,7 +515,7 @@ function getCurrentWeatherFromAPI(mountain) {
   $.getJSON('https://api.weatherbit.io/v2.0/current', weatherParams, displayCurrentWeather)
 }
 
-function getDetailedForecastFromAPI(mountain) {
+function getDetailedForecastFromAPI (mountain) {
   const weatherParams = {
     key: WEATHERBITAPI.key,
     units: 'I',
@@ -526,7 +526,7 @@ function getDetailedForecastFromAPI(mountain) {
   $.getJSON('https://api.weatherbit.io/v2.0/forecast/3hourly', weatherParams, displayDetailedForecast)
 }
 
-function getExtendedForecastFromAPI(mountain) {
+function getExtendedForecastFromAPI (mountain) {
   const weatherParams = {
     key: WEATHERBITAPI.key,
     units: 'I',
@@ -534,10 +534,10 @@ function getExtendedForecastFromAPI(mountain) {
     lon: mountain.lon
   }
 
-  $.getJSON('https://api.weatherbit.io/v2.0/forecast/daily', weatherParams, displayExtendedForecast)  
+  $.getJSON('https://api.weatherbit.io/v2.0/forecast/daily', weatherParams, displayExtendedForecast)
 }
 
-function getPhotosFromAPI(mountain) {
+function getPhotosFromAPI (mountain) {
   const photoParams = {
     method: 'flickr.photos.search',
     api_key: FLICKRAPI.key,
@@ -551,7 +551,7 @@ function getPhotosFromAPI(mountain) {
   $.getJSON('https://api.flickr.com/services/rest/', photoParams, displayPhotos)
 }
 
-function displayMountainPageHeader(mountain) {
+function displayMountainPageHeader (mountain) {
   $('.js-header-content').html(`
     <h2>${mountain.name}</h2>
     <p>
@@ -563,7 +563,7 @@ function displayMountainPageHeader(mountain) {
   $('h1').before('<a href="index.html">&larr; back to Home</a>')
 }
 
-function displayCurrentWeather(data) {
+function displayCurrentWeather (data) {
   const currentWeather = data.data[0]
   $('.js-current-weather').html(`
     <h3>Current Weather</h3>
@@ -576,14 +576,14 @@ function displayCurrentWeather(data) {
   `)
 }
 
-function displayDetailedForecast(data) {
+function displayDetailedForecast (data) {
   let detailedForecastHTML = '<div class="weather-container">'
   data.data.forEach(hourly => {
     let date = new Date(hourly.datetime.split(':')[0])
     date.setUTCHours(hourly.datetime.split(':')[1])
     detailedForecastHTML += `
       <div class="weather-box">
-        ${moment(date).format("ddd ha")}<br>
+        ${moment(date).format('ddd ha')}<br>
         <img src="images/icons/${hourly.weather.icon}.png" alt="${hourly.weather.description}"><br>
         ${hourly.temp}ºF ${hourly.weather.description}<br>
         Wind: ${hourly.wind_cdir} @ ${hourly.wind_spd}mph
@@ -594,14 +594,14 @@ function displayDetailedForecast(data) {
   $('.js-detailed-forecast').append(detailedForecastHTML).show()
 }
 
-function displayExtendedForecast(data) {
+function displayExtendedForecast (data) {
   let extendedForecastHTML = '<div class="weather-container">'
   data.data.forEach(day => {
     let date = new Date(day.datetime)
     extendedForecastHTML += `
       <div class="weather-box">
-        ${moment(date).format("dddd")}<br>
-        ${moment(date).format("MMM D")}<br>
+        ${moment(date).format('dddd')}<br>
+        ${moment(date).format('MMM D')}<br>
         <img src="images/icons/${day.weather.icon}.png" alt="${day.weather.description}"><br>
         ${day.weather.description}<br>
         Hi: ${day.max_temp}ºF<br>
@@ -613,7 +613,7 @@ function displayExtendedForecast(data) {
   $('.js-extended-forecast').append(extendedForecastHTML).show()
 }
 
-function displayPhotos(data) {
+function displayPhotos (data) {
   let photosHTML = ``
 
   data.photos.photo.forEach(photo => {
@@ -624,7 +624,7 @@ function displayPhotos(data) {
 }
 
 // collect list of mountain ranges to display mountains by range on the homepage
-function collectMtnRanges() {
+function collectMtnRanges () {
   FOURTEENERS.forEach(mtn => {
     if (!MTNRANGES.includes(mtn.range)) {
       MTNRANGES.push(mtn.range)
@@ -633,10 +633,10 @@ function collectMtnRanges() {
 }
 
 // create the HTML to display the list of mountains (by range) on the homepage
-function makeMtnList() {
+function makeMtnList () {
   let mtnListHTML = `<ul>`
   MTNRANGES.forEach(range => {
-    mtnListHTML += `<li><h4>${range}</h4><ul>`
+    mtnListHTML += `<li><h3>${range}</h3><ul>`
     FOURTEENERS.forEach(mtn => {
       if (mtn.range === range) {
         mtnListHTML += `<li><a href="?${mtn.slug}">${mtn.name}</a></li>`
@@ -649,19 +649,19 @@ function makeMtnList() {
   return mtnListHTML
 }
 
-function setNav() {
+function showHomePage () {
   collectMtnRanges()
   let navHTML = makeMtnList()
   $('nav').html(navHTML)
 }
 
-function run14ers() {
+function run14ers () {
   getURLParameter()
   selectPage(URLparam)
 }
 
 // show-hide extended weather forecast
-$('.js-extended-forecast button').click(function() {
+$('.js-extended-forecast button').click(function () {
   if ($(this).text() === 'show') {
     $(this).text('hide')
   } else {
@@ -672,7 +672,7 @@ $('.js-extended-forecast button').click(function() {
 })
 
 // show-hide detailed weather forecast
-$('.js-detailed-forecast button').click(function() {
+$('.js-detailed-forecast button').click(function () {
   if ($(this).text() === 'show') {
     $(this).text('hide')
   } else {
@@ -680,6 +680,11 @@ $('.js-detailed-forecast button').click(function() {
   }
   $(this).toggleClass('selected')
   $('.js-detailed-forecast .weather-container').slideToggle()
+})
+
+// show-hide peak lists
+$('nav').on('click', 'h3', function () {
+  $(this).siblings('ul').slideToggle()
 })
 
 $(run14ers)
